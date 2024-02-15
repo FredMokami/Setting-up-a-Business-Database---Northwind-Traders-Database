@@ -1,11 +1,13 @@
-Project Overview
+# Project Overview
+
 As a Data Analyst at Northwind Traders, a gourmet food supplier, I have been assigned the responsibility of building and optimizing a MySQL database with the goal of efficiently managing data and ensuring high standards of data quality.
 
 The database will cover multiple aspects of company operations, such as customer details, product information, order records, shipper details, and employee data.
 
 The data, currently in CSV files, needs to be imported into MySQL, and can be accessed by searching ‘Northwind Traders’ from Maven Analytics’ Data Playground.
 
-The Task
+# The Task
+
 Create a data dictionary to display information about each field in a database.
 Generate an Entity Relationship Diagram (ERD) to serve as a tool for understanding and reporting data in the Northwind database.
 Create the northwind_db schema to host the necessary related tables for the business based on the Entity Relationship Diagram.
