@@ -21,11 +21,14 @@ The data, currently in CSV files, needs to be imported into MySQL, and can be ac
 
 Explore the northwind_db schema data dictionary [here](https://docs.google.com/document/d/1aerklP4KTvpbVj7pnZTngDIbgp8oHB3qykUmFSW9zVY/edit#heading=h.he9pyhahsu72)
 
-Entity Relationship Diagram (ERD)
+# Entity Relationship Diagram (ERD)
 
 An entity relationship diagram will help us visualize the relationships between tables in our model and will serve as a reference when creating tables.
 
 Here is an Entity Relationship Diagram I created using MySQL Workbench’s Models menu, aligned with the available CSV data:
+
+![image](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/f96e6007-4860-4300-95d0-8513e05969e6)
+
 
 
 Northwind_db Entity Relationship Diagram
