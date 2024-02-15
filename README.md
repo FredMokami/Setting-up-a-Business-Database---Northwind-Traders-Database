@@ -46,9 +46,11 @@ Create these tables to store the CSV data: ```orders```, ```orders_details```, `
 
 ![1](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/4df7aa03-b1bc-4e16-911e-d4f953d22769)
 
+
 We need to set an ```auto_increment``` constraint on the primary key for order_idto generate unique IDs automatically when new orders are placed. Additionally, the first order_id will start at 10248 to align with the provided CSV data.
 
 ![2](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/c33b6641-4ee5-4267-b05f-b288c2b73f10)
+
 
 ```order_details``` - this table contains details of products within orders.
 
