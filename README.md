@@ -8,15 +8,16 @@ The data, currently in CSV files, needs to be imported into MySQL, and can be ac
 
 # The Task
 
-Create a data dictionary to display information about each field in a database.
-Generate an Entity Relationship Diagram (ERD) to serve as a tool for understanding and reporting data in the Northwind database.
-Create the northwind_db schema to host the necessary related tables for the business based on the Entity Relationship Diagram.
-Establish database entities or tables.
-Set data types and formats.
-Load data from the CSV files into the respective tables.
-Ensure the enforcement of referential integrity constraints.
-Connect to the northwind_db with Tableau and create an executive-level dashboard to visualize KPI performance.
-Data Dictionary
+* Create a data dictionary to display information about each field in a database.
+* Generate an Entity Relationship Diagram (ERD) to serve as a tool for understanding and reporting data in the Northwind database.
+* Create the northwind_db schema to host the necessary related tables for the business based on the Entity Relationship Diagram.
+* Establish database entities or tables.
+* Set data types and formats.
+* Load data from the CSV files into the respective tables.
+* Ensure the enforcement of referential integrity constraints.
+* Connect to the northwind_db with Tableau and create an executive-level dashboard to visualize KPI performance.
+
+# Data Dictionary
 
 Explore the northwind_db schema data dictionary here:
 
