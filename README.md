@@ -28,46 +28,23 @@ An entity relationship diagram will help us visualize the relationships between 
 Here is an Entity Relationship Diagram I created using MySQL Workbench’s Models menu, aligned with the available CSV data:
 
 ![image](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/f96e6007-4860-4300-95d0-8513e05969e6)
+```Northwind_db Entity Relationship Diagram```
 
-
-
-Northwind_db Entity Relationship Diagram
-Database Creation
+# Database Creation
 
 This script will be utilized to create the northwind_db database:
 
--- Drop the Northwind database if it exists
-DROP DATABASE IF EXISTS northwind_db;
+![Screenshot 2024-02-15 132159](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/2d068841-feae-4123-b888-c17ff9d364e4)
 
--- Create the Northwind database
-CREATE DATABASE northwind_db;
-
--- Confirm if northwind_db is in the list of databases
-SHOW DATABASES;
-
--- Switch to the Northwind database
-USE northwind_db;
-Table Creation
+# Table Creation
 
 Each table will be defined by its name and the nature of the data it will hold. Specifically, we will ensure that each column has an appropriate name and data type based on the available data.
 
-Create these tables to store the CSV data: orders, orders_details, customers, products, categories, employees,and shippers.
+Create these tables to store the CSV data: ```orders```, ```orders_details```, ```customers```, ```products```, ```categories```, ```employees```,and ```shippers```.
 
-orders
+```orders``` - represents customer orders.
+![1](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/4df7aa03-b1bc-4e16-911e-d4f953d22769)
 
-Represents customer orders.
-
-CREATE TABLE orders (
-   order_id BIGINT NOT NULL,
-   customer_id VARCHAR(50) NOT NULL,
-   employee_id BIGINT NOT NULL,
-   order_date DATE NOT NULL,
-   required_date DATE NOT NULL,
-   shipped_date DATE,
-   shipper_id BIGINT NOT NULL,
-   freight DECIMAL(10, 2) NOT NULL,
-   PRIMARY KEY (order_id)
- );
 We need to set an auto_increment constraint on the primary key for order_idto generate unique IDs automatically when new orders are placed. Additionally, the first order_id will start at 10248 to align with the provided CSV data.
 
 ALTER TABLE orders
