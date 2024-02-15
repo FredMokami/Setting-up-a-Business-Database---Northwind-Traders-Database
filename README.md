@@ -43,107 +43,55 @@ Each table will be defined by its name and the nature of the data it will hold. 
 Create these tables to store the CSV data: ```orders```, ```orders_details```, ```customers```, ```products```, ```categories```, ```employees```,and ```shippers```.
 
 ```orders``` - represents customer orders.
+
 ![1](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/4df7aa03-b1bc-4e16-911e-d4f953d22769)
 
-We need to set an auto_increment constraint on the primary key for order_idto generate unique IDs automatically when new orders are placed. Additionally, the first order_id will start at 10248 to align with the provided CSV data.
+We need to set an ```auto_increment``` constraint on the primary key for order_idto generate unique IDs automatically when new orders are placed. Additionally, the first order_id will start at 10248 to align with the provided CSV data.
 
-ALTER TABLE orders
-MODIFY COLUMN order_id BIGINT AUTO_INCREMENT,
-AUTO_INCREMENT = 10248;
-order_details
+![2](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/c33b6641-4ee5-4267-b05f-b288c2b73f10)
 
-This table contains details of products within orders.
+```order_details``` - this table contains details of products within orders.
 
-CREATE TABLE order_details (
-  order_id BIGINT NOT NULL,
-  product_id BIGINT NOT NULL,
-  unit_price DECIMAL(10, 2) NOT NULL,
-  quantity INT NOT NULL,
-  discount DECIMAL(6, 2) NOT NULL,
-  PRIMARY KEY (order_id, product_id)
-);
-The order_details table has a composite primary key which uniquely identifies each record through a combination of the order_id and product_id columns.
+![image](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/7c9e99e7-31d7-4af1-9e9a-5775f8468e2a)
 
-I’d prefer a single-column primary key (order_details_id) for its simplicity, readability, and ease of record access.
 
--- Drop the existing primary key
-ALTER TABLE order_details
-DROP PRIMARY KEY;
+The ```order_details``` table has a composite primary key which uniquely identifies each record through a combination of the order_id and product_id columns.
 
--- Add order_details_id column as primary key
-ALTER TABLE order_details
-ADD order_details_id BIGINT AUTO_INCREMENT FIRST,
-ADD PRIMARY KEY (order_details_id);
-customers
+I’d prefer a single-column primary key (```order_details_id```) for its simplicity, readability, and ease of record access.
 
-Contains information about customers.
+![3](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/4fa17896-8f95-44ee-b9c0-7ada9cc3cc03)
 
-CREATE TABLE customers (
-  customer_id VARCHAR(50) NOT NULL,
-  company_name VARCHAR(50) NOT NULL,
-  contact_name VARCHAR(50) NOT NULL,
-  contact_title VARCHAR(50) NOT NULL,
-  city VARCHAR(50) NOT NULL,
-  country VARCHAR(50) NOT NULL,
-  PRIMARY KEY (customer_id)
-);
-products
 
-This table stores information about products.
+```customers``` - contains information about customers.
 
-I applied a CHECK constraint to discontinued to allow only values of 0 or 1, where 0 signifies product availability, and 1 indicates discontinuation.
+![4](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/a83a6d1e-9493-4ca0-a20e-c4d0d5b93f33)
 
-Additionally, I implemented a UNIQUE constraint on product_name to ensure distinct names for each product.
+```products``` - this table stores information about products.
 
-CREATE TABLE products (
-  product_id BIGINT NOT NULL AUTO_INCREMENT,
-  product_name VARCHAR(50) NOT NULL,
-  quantity_per_unit VARCHAR(50) NOT NULL,
-  unit_price DECIMAL(6, 2) NOT NULL,
-  discontinued TINYINT CHECK (discontinued IN (0, 1)) NOT NULL,
-  category_id INT NOT NULL,
-  PRIMARY KEY (product_id),
-  UNIQUE (product_name)
-);
-categories
+I applied a ```CHECK``` constraint to discontinued to allow only values of 0 or 1, where 0 signifies product availability, and 1 indicates discontinuation.
 
-This table contains information describing product categories.
+Additionally, I implemented a ```UNIQUE``` constraint on product_name to ensure distinct names for each product.
 
-The unique constraint on category_name column guarantees that each category will have a distinct name.
+![5](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/c19421ff-602c-4844-9351-bd6268948a70)
 
-CREATE TABLE categories (
-  category_id INT NOT NULL AUTO_INCREMENT,
-  category_name VARCHAR(50) NOT NULL,
-  category_description VARCHAR(255) NOT NULL,
-  PRIMARY KEY (category_id),
-  UNIQUE (category_name)
-);
-employee
+```categories``` - this table contains information describing product categories.
 
-This table stores employee details.
+The ```UNIQUE``` constraint on ```category_name``` column guarantees that each category will have a distinct name.
 
-CREATE TABLE employees (
-  employee_id BIGINT NOT NULL AUTO_INCREMENT,
-  employee_name VARCHAR(50) NOT NULL,
-  title VARCHAR(50) NOT NULL,
-  city VARCHAR(50) NOT NULL,
-  country VARCHAR(50) NOT NULL,
-  reports_to BIGINT,
-  PRIMARY KEY (employee_id)
-);
-shippers
+![6](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/63ca0b3f-9124-4447-aaa1-9b9b6678f609)
 
-Contains details about shipping companies or shippers.
+```employee``` - this table stores employee details.
 
-CREATE TABLE shippers (
-  shipper_id BIGINT NOT NULL AUTO_INCREMENT,
-  company_name VARCHAR(255) NOT NULL,
-  PRIMARY KEY (shipper_id),
-  UNIQUE (company_name)
-);
-Load Data
+![8](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/1c8454da-5b71-4305-9cc2-18f1b52edf6d)
 
-Now that our database and tables are set up, we will proceed to import CSV data. We can either use the LOAD DATA INFILE statement to import data via the command line or use the import wizard in MySQL’s user interface. For this project, I will be using the import wizard.
+
+```shippers``` - contains details about shipping companies or shippers.
+
+![image](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/f05a009d-1ead-4126-8318-eb021062f540)
+
+# Load Data
+
+Now that our database and tables are set up, we will proceed to import CSV data. We can either use the ```LOAD DATA INFILE``` statement to import data via the command line or use the import wizard in MySQL’s user interface. For this project, I will be using the import wizard.
 
 The wizard is accessible from the object browser’s context menu by right-clicking on a table and choosing Table Data Import Wizard. This process will be repeated for each table.
 
