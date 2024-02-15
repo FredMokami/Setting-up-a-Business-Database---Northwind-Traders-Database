@@ -97,7 +97,7 @@ Now that our database and tables are set up, we will proceed to import CSV data.
 
 The wizard is accessible from the object browser’s context menu by right-clicking on a table and choosing Table Data Import Wizard. This process will be repeated for each table.
 
-Enforce Referential Integrity
+# Enforce Referential Integrity
 
 After loading the data, we need to link our tables.
 
@@ -105,25 +105,8 @@ Referential integrity ensures the accuracy and consistency of data across relate
 
 We will refer to the to the Entity Relationship Diagram we created earlier to help us understand relationships between tables.
 
--- orders foreign keys
-ALTER TABLE orders
-  ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
-  ADD FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
-  ADD FOREIGN KEY (shipper_id) REFERENCES shippers(shipper_id);
+![image](https://github.com/FredMokami/Setting-up-a-Business-Database---Northwind-Traders-Database/assets/132344241/84c3c8cf-e9a8-4888-a0e2-a3b1579c931c)
 
--- order_details foreign keys
-ALTER TABLE order_details
-  ADD FOREIGN KEY (order_id) REFERENCES orders(order_id),
-  ADD FOREIGN KEY (product_id) REFERENCES products(product_id);
-
--- products foreign key
-ALTER TABLE products
-  ADD FOREIGN KEY (category_id) REFERENCES categories(category_id);
-
--- employees - self-referencing foreign key
-ALTER TABLE employees
-  ADD FOREIGN KEY (reports_to) REFERENCES employees(employee_id);
-Northwind Traders’ Performance Dashboard
 
 After connecting Tableau to the Northwind database, here’s the dashboard I designed to assist the executive team in tracking key performance areas for the current year (2015 YTD), including sales, shipping costs, orders, and customer trends, enabling them to make data-driven decisions for the business.
 
