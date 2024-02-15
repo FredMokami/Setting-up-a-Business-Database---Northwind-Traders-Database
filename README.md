@@ -111,7 +111,8 @@ We will refer to the to the Entity Relationship Diagram we created earlier to he
 After connecting Tableau to the Northwind database, here’s the dashboard I designed to assist the executive team in tracking key performance areas for the current year (2015 YTD), including sales, shipping costs, orders, and customer trends, enabling them to make data-driven decisions for the business.
 
 
-You can interact with this dashboard on my Tableau public profile.
+You can interact with this dashboard on my Tableau public profile [here]([[https://docs.google.com/document/d/1aerklP4KTvpbVj7pnZTngDIbgp8oHB3qykUmFSW9zVY/edit#heading=h.he9pyhahsu72](https://bit.ly/48Wv0Yw)](https://bit.ly/48Wv0Yw))
+.
 
 Thanks for reading! Please feel free to share any advice on how to improve this project.
 
