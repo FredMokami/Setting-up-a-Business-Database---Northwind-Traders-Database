@@ -19,7 +19,7 @@ The data, currently in CSV files, needs to be imported into MySQL, and can be ac
 
 # Data Dictionary
 
-Explore the northwind_db schema data dictionary here:
+Explore the northwind_db schema data dictionary [here](https://docs.google.com/document/d/1aerklP4KTvpbVj7pnZTngDIbgp8oHB3qykUmFSW9zVY/edit#heading=h.he9pyhahsu72)
 
 Entity Relationship Diagram (ERD)
 
