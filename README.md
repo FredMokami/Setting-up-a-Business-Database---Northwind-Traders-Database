@@ -199,4 +199,4 @@ You can interact with this dashboard on my Tableau public profile.
 
 Thanks for reading! Please feel free to share any advice on how to improve this project.
 
-I will walk you through Key Performance Indicators analysis with SQL in an upcoming post.
+I will walk you through Key Performance Indicators analysis with SQL in an upcoming post.# Setting-up-a-Business-Database---Northwind-Traders-Database
